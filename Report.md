@@ -98,15 +98,18 @@ The function accepts a callable transformation and applies it element-wise to th
 ### Answer to Question 5: Visualization of COVID-19 Data
 
 #### What was done  
-Real COVID-19 data create a scatter plot showing daily new cases for a selected country and a bar chart comparing total cases across three countries  
+Real COVID-19 data were used to create a scatter plot showing daily new cases for a selected country and a bar chart comparing total cases across three countries. 
 
 #### How it was done  
 The dataset was loaded locally using pandas. Matplotlib was used to generate the plots with clear titles, axis labels, and legends. Input validation ensures that exactly three countries are provided for comparison.
 
 **Figures:**  
 
+*Figure 1:* Daily new COVID-19 cases for Germany  
 ![Scatter Plot of Daily Cases](Figure_1.png)  
-![Bar Chart of Total Cases](Figure_2.png)  
+
+*Figure 2:* Total COVID-19 cases for France, Spain, and Italy  
+![Bar Chart of Total Cases](Figure_2.png)
 
 ---
 
