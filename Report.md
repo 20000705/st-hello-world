@@ -41,6 +41,7 @@ A lambda function was used internally to map BMI values to categories based on s
 
 ### Results
 `BMI categories: {16.5: 'Underweight', 22.4: 'Normal', 27.3: 'Overweight', 31.8: 'Obesity'}`
+
 ---
 
 ## Question 4: Health Data Matrix Analysis
@@ -57,8 +58,8 @@ If the matrix does not meet the required size, an informative message is printed
 #### How it was done
 NumPy’s built-in mean and max functions were used for numerical stability and clarity. The function checks the matrix dimensions before accessing rows and columns.
 
-#### Results and Validation
-The function was tested on a sample matrix with known values. The returned row average and column maximum matched manually verified calculations, confirming correctness.
+#### Results
+`analyze_matrix: [ 59.125 130.   ]`
 
 ---
 
@@ -70,8 +71,11 @@ A function was implemented to apply a user-defined transformation to a specific 
 #### How it was done
 The function accepts a callable transformation and applies it to all elements in the selected row. A lambda function was used to normalize a row by subtracting its mean and dividing by its standard deviation.
 
-#### Results and Validation
-After normalization, the transformed row had a mean close to zero and a standard deviation close to one. This confirms that the normalization process was applied correctly. Other rows in the matrix remained unchanged.
+#### Results
+`row_transform (row 1 normalized):
+ [[ 70.           1.75        22.9        120.        ]
+ [  0.41896332  -1.15051844  -0.69091317   1.42246829]
+ [ 65.           1.6         25.4        110.        ]]`
 
 ---
 
@@ -85,8 +89,10 @@ Real COVID-19 data from *Our World in Data* were used to create:
 ### How it was done
 The dataset was loaded locally using pandas. Matplotlib was used to generate the plots, with appropriate titles, axis labels, and legends. Input validation ensures that exactly three countries are provided for comparison.
 
-### Results and Visuals
-The scatter plot shows the temporal evolution of daily new cases, clearly illustrating periods of rising and falling infection rates. The bar chart provides a direct comparison of total case counts across the selected countries, making relative differences immediately visible. Both figures include labeled axes and legends to ensure clarity and interpretability.
+### Results
+![scatter](Figure_1.png)
+![compare](Figure_2.png)
+
 
 ---
 
