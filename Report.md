@@ -98,8 +98,11 @@ The dataset was loaded locally using pandas. Matplotlib was used to generate the
 
 ## Errors and Issues Encountered
 
+## Errors and Issues Encountered
+
 Several minor issues were encountered during the implementation process. When loading the COVID-19 dataset, a warning appeared due to mixed data types across columns. This occurred because the dataset contains a combination of numeric values, missing entries, and text fields. The issue was resolved by adjusting the data-loading settings, and it did not affect the correctness of the analysis.
 
 In the matrix analysis section, an early version of the code did not check the matrix dimensions before accessing rows and columns, which caused index errors for small test cases. Adding dimension validation prevented these errors and improved robustness.
 
 Finally, when normalizing a matrix row, integer arrays caused unintended truncation of floating-point results. Converting the matrix to floating-point values before applying the transformation resolved this issue.
+
