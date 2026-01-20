@@ -26,8 +26,8 @@ The class constructor stores the patient name, age, and measurement dictionary. 
 
 The `average_measurement` method computes the mean of a selected measurement and raises an error if the measurement does not exist.
 
-### Results and Validation
-The class was tested using sample blood pressure and heart rate data. The computed averages matched hand-calculated means. Attempts to access nonexistent measurements correctly raised errors, confirming proper validation behavior.
+### Results
+`Average BP = 122.33`
 
 ---
 
@@ -39,9 +39,8 @@ A function was implemented to classify BMI values into standard categories such 
 ### How it was done
 A lambda function was used internally to map BMI values to categories based on standard threshold comparisons. The function processes a list of BMI values and returns a dictionary mapping each value to its category.
 
-### Results and Validation
-Test BMI values spanning all categories were provided. Each BMI value was classified correctly according to standard medical definitions, demonstrating that the lambda-based logic behaves as expected.
-
+### Results
+`BMI categories: {16.5: 'Underweight', 22.4: 'Normal', 27.3: 'Overweight', 31.8: 'Obesity'}`
 ---
 
 ## Question 4: Health Data Matrix Analysis
