@@ -8,6 +8,9 @@ A recursive function was implemented to compute a Health Index H(x) defined by a
 ### How it was done
 The recurrence relation was simplified so that each call computes the value using the previous result H(x-1). Input validation ensures that only non-negative integers are accepted; invalid inputs raise an error.
 
+### Results
+`health_index(3) = 12`
+
 ---
 
 ## Question 2: Class-Based Patient Records
@@ -17,11 +20,14 @@ A `PatientRecord` class was created to store patient information and health meas
 
 ### How it was done
 The class constructor stores the patient name, age, and measurement dictionary. A static validation method checks that:
-- Measurements are stored in a dictionary
-- Each measurement value is a list
-- All elements in the lists are numeric
+- Measurements are stored in a dictionary  
+- Each measurement value is a list  
+- All elements in the lists are numeric  
 
 The `average_measurement` method computes the mean of a selected measurement and raises an error if the measurement does not exist.
+
+### Results and Validation
+The class was tested using sample blood pressure and heart rate data. The computed averages matched hand-calculated means. Attempts to access nonexistent measurements correctly raised errors, confirming proper validation behavior.
 
 ---
 
@@ -31,7 +37,10 @@ The `average_measurement` method computes the mean of a selected measurement and
 A function was implemented to classify BMI values into standard categories such as Underweight, Normal, Overweight, and Obesity.
 
 ### How it was done
-A lambda function was used internally to map BMI values to categories based on threshold comparisons. The function processes a list of BMI values and returns a dictionary mapping each value to its category.
+A lambda function was used internally to map BMI values to categories based on standard threshold comparisons. The function processes a list of BMI values and returns a dictionary mapping each value to its category.
+
+### Results and Validation
+Test BMI values spanning all categories were provided. Each BMI value was classified correctly according to standard medical definitions, demonstrating that the lambda-based logic behaves as expected.
 
 ---
 
@@ -41,13 +50,16 @@ A lambda function was used internally to map BMI values to categories based on t
 
 #### What was done
 A function was written to analyze a 2D NumPy matrix by computing:
-- The average of the second row
-- The maximum value of the fourth column
+- The average of the second row  
+- The maximum value of the fourth column  
 
 If the matrix does not meet the required size, an informative message is printed.
 
 #### How it was done
-NumPy’s built-in mean and max functions were used. The function first checks the matrix dimensions before performing calculations.
+NumPy’s built-in mean and max functions were used for numerical stability and clarity. The function checks the matrix dimensions before accessing rows and columns.
+
+#### Results and Validation
+The function was tested on a sample matrix with known values. The returned row average and column maximum matched manually verified calculations, confirming correctness.
 
 ---
 
@@ -59,8 +71,8 @@ A function was implemented to apply a user-defined transformation to a specific 
 #### How it was done
 The function accepts a callable transformation and applies it to all elements in the selected row. A lambda function was used to normalize a row by subtracting its mean and dividing by its standard deviation.
 
-#### Verification
-After transformation, the normalized row has a mean close to zero and a standard deviation close to one, confirming correct behavior.
+#### Results and Validation
+After normalization, the transformed row had a mean close to zero and a standard deviation close to one. This confirms that the normalization process was applied correctly. Other rows in the matrix remained unchanged.
 
 ---
 
@@ -68,11 +80,14 @@ After transformation, the normalized row has a mean close to zero and a standard
 
 ### What was done
 Real COVID-19 data from *Our World in Data* were used to create:
-1. A scatter plot of daily new cases for a single country
-2. A bar chart comparing total cases across three countries
+1. A scatter plot of daily new cases for a single country  
+2. A bar chart comparing total cases across three countries  
 
 ### How it was done
 The dataset was loaded locally using pandas. Matplotlib was used to generate the plots, with appropriate titles, axis labels, and legends. Input validation ensures that exactly three countries are provided for comparison.
+
+### Results and Visuals
+The scatter plot shows the temporal evolution of daily new cases, clearly illustrating periods of rising and falling infection rates. The bar chart provides a direct comparison of total case counts across the selected countries, making relative differences immediately visible. Both figures include labeled axes and legends to ensure clarity and interpretability.
 
 ---
 
@@ -83,5 +98,3 @@ Several minor issues were encountered during the implementation process. When lo
 In the matrix analysis section, an early version of the code did not check the matrix dimensions before accessing rows and columns, which caused index errors for small test cases. Adding dimension validation prevented these errors and improved robustness.
 
 Finally, when normalizing a matrix row, integer arrays caused unintended truncation of floating-point results. Converting the matrix to floating-point values before applying the transformation resolved this issue.
-
----
