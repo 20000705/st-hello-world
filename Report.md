@@ -1,16 +1,12 @@
-# Health Data Analysis with Python  
-**Report**
+# Report
 
 ## Question 1: Recursive Health Index Computation
 
 ### What was done
-A recursive function was implemented to compute a Health Index \( H(x) \) defined by a recurrence relation with a base case \( H(0) = 0 \).
+A recursive function was implemented to compute a Health Index H(x) defined by a recurrence relation with a base case H(0) = 0.
 
 ### How it was done
-The recurrence relation was simplified so that each call computes the value using the previous result \( H(x-1) \). Input validation ensures that only non-negative integers are accepted; invalid inputs raise an error.
-
-### Verification
-Small values of \( x \) were computed manually and compared with the function output. The values matched exactly, confirming correctness.
+The recurrence relation was simplified so that each call computes the value using the previous result H(x-1). Input validation ensures that only non-negative integers are accepted; invalid inputs raise an error.
 
 ---
 
@@ -27,9 +23,6 @@ The class constructor stores the patient name, age, and measurement dictionary. 
 
 The `average_measurement` method computes the mean of a selected measurement and raises an error if the measurement does not exist.
 
-### Verification
-Test data for blood pressure and heart rate were used. The computed averages matched hand-calculated values.
-
 ---
 
 ## Question 3: Lambda-Based BMI Classification
@@ -39,9 +32,6 @@ A function was implemented to classify BMI values into standard categories such 
 
 ### How it was done
 A lambda function was used internally to map BMI values to categories based on threshold comparisons. The function processes a list of BMI values and returns a dictionary mapping each value to its category.
-
-### Verification
-Known BMI examples were tested, and each value was assigned the correct category according to standard definitions.
 
 ---
 
@@ -58,9 +48,6 @@ If the matrix does not meet the required size, an informative message is printed
 
 #### How it was done
 NumPy’s built-in mean and max functions were used. The function first checks the matrix dimensions before performing calculations.
-
-#### Verification
-The results were verified by manually inspecting the matrix values and confirming the calculations.
 
 ---
 
@@ -87,27 +74,14 @@ Real COVID-19 data from *Our World in Data* were used to create:
 ### How it was done
 The dataset was loaded locally using pandas. Matplotlib was used to generate the plots, with appropriate titles, axis labels, and legends. Input validation ensures that exactly three countries are provided for comparison.
 
-### Verification
-Plots were visually inspected to confirm that:
-- The correct countries were selected
-- Axis labels and titles were accurate
-- Trends matched known COVID-19 patterns
-
 ---
 
 ## Errors and Issues Encountered
 
-While loading the dataset, a warning about mixed data types appeared. This was resolved by adjusting the data-loading settings. The warning did not affect the correctness of the results.
+Several minor issues were encountered during the implementation process. When loading the COVID-19 dataset, a warning appeared due to mixed data types across columns. This occurred because the dataset contains a combination of numeric values, missing entries, and text fields. The issue was resolved by adjusting the data-loading settings, and it did not affect the correctness of the analysis.
+
+In the matrix analysis section, an early version of the code did not check the matrix dimensions before accessing rows and columns, which caused index errors for small test cases. Adding dimension validation prevented these errors and improved robustness.
+
+Finally, when normalizing a matrix row, integer arrays caused unintended truncation of floating-point results. Converting the matrix to floating-point values before applying the transformation resolved this issue.
 
 ---
-
-## Conclusion
-
-This assignment reinforced key Python concepts, including recursion, object-oriented design, functional programming, numerical analysis, and data visualization. Each result was validated through manual checks, logical reasoning, and visual inspection. The final solutions are correct, reusable, and maintainable.
-
----
-
-## Files Included
-
-- `answers.py` — Contains all implemented functions and classes  
-- `report.md` — This report explaining methods, results, and verification
